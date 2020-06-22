@@ -7,11 +7,15 @@ To learn redux we must first understand what state is. <br>
  *In other words, “state” is what allows you to create components that are dynamic and interactive.*<br>
 *Example*
 ``` javascript
-Class MyClass extends React.Component { 
-   this.state = { value : "my-new-value" }; 
-  render(){
-  return <div>{ths.state.value}</div>;// this will return the my-new-value
- }
+import React, {useState} from 'react';
+
+const App = () => {
+const [data, setData] = useState =({
+      firstName:'',
+      lastName:''
+})
+const {firstName, lastName} = datacf
+setData({...data, firstName:'bhupen',lastName:'thapa'})
 }
 ```
 **_What is redux?_**<br>
@@ -106,15 +110,36 @@ yarn add react-redux redux
  ```
  Now, our store looks a lot more like a real world store in an application that is prepared to scale.
  
- ### Setting an initial state for the store
- Some time we want to pre-populate our store with datas. For that, we normally pass our initial state as a second argument when creating a store.
+ ### Using Store from components
+ At App.js
  ``` javascript
-    const store = createStore(allReducers,
-    {
-       products:[{name:'samsung galaxy J7 prime'}],
-       users:[{name:'bhupen'}]
-    });
+ import React from 'react';
+ import {Provider} from 'react-redux';
+ import store from './store'
+ const App = () => {
+ <Provider store = {store}>
+ </Provider>
+ }
  ```
+ Now, we can access our store from all the components.<br />
+ To access our store, we have to first connect to it with components.<br />
+ Let's begin our connection with LoginComponent.
+ ``` javascript
+ import React from 'react';
+ import {connect} from 'react-redux';
+ import PropTypes from 'prop-types';
+ 
+const Login = ({login}) => {
+}
+
+Login.proptypes = {
+login:PropTypes.func.isRequired
+}
+
+export default connect(null, {login})(Login)
+ 
+ ```
+ 
  
 
  
