@@ -76,11 +76,10 @@ yarn add react-redux redux
  }
 }
  ```
- _It should prints the action type and payload in console as below._<br>
- ![redux](https://user-images.githubusercontent.com/47861774/57584969-3e2c0480-7501-11e9-8770-a39dc0c4c996.png)
+ *In above code, case 'INCREMENT' returns state by adding 1 and case 'DECREMENT' returns state by substracting 1.*
  
  ### Combining ruducers
- Let's combine a reducers into a single reducer to pass into our store.<br>
+ Let's combine our reducers into a single reducer to pass into our store.<br>
  _Assume that, we got 2 reducers - productsReducer & usersReduser_
  ``` javascript
  //products reducer
