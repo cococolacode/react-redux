@@ -32,7 +32,7 @@ yarn add react-redux redux
 > *redux --> for creating store*<br>
 > *React Redux requires React 16.8.3 or later.*
 
- **Let's learn how to create our first store**
+ **Let's create our first store**
  ``` javascript
  import {createStore} from 'redux';
  
@@ -43,25 +43,37 @@ yarn add react-redux redux
  console.log(store); // output: this is a state, since the reduce 'this is a state'. 
  ```
  We have successfully created our first store.<br>
- *Now, to dispatch an action, let's create an action, which is basically just an object with a type and a payload*
+ *Let's create an action, which is basically just an object with a type and a payload*
  ``` javascript
- const action = {
-     type:'changeState',
-      payload:{
-        newState:'my new state', 
-      }
+ //increment action
+ const increment = {
+     type:'INCREMENT',
+     payload:1
  }
+ 
+ //decrement action
+ const decrement = {
+       type:'DECREMENT',
+       payload:1
+ }
+ 
  ```
- *to dispatch or send an action,* 
+ *Let's dispatch our action,* 
  ``` javascript 
- store.dispatch(action )
+ store.dispatch([increment, decrement]) --> it will first dispatch increment and then decrement
  ```
- Next, let's learn how our reducer reads an action to update a store state.
- reducer have two parameters - _initial state of a reducer and the action_. It listens to every single action that is send.So, there needs to be figuring out what to do differently for each action. For now, let's just print our action.
+ The above gives you a basic idea on how redux works.Now, let's dive into deep.<br />
+ **Reducer** <br />
+ reducer have two parameters - _initial state of a reducer and the action_. It listens to every single action that is send.So, there needs to be figuring out what to do differently for each action.
 ```javascript
  reducer(state,action){
- console.log(action);
- return 'This is a state'
+ const {type, payload} = action;
+ switch(type){
+ case 'INCREMENT':
+       return state+payload;
+ case 'DECREMENT':
+       return state-payload;
+ }
 }
  ```
  _It should prints the action type and payload in console as below._<br>
