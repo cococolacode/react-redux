@@ -122,23 +122,17 @@ yarn add react-redux redux
  }
  ```
  Now, we can access our store from all the components.<br />
- To access our store, we have to first connect to it with components.<br />
- Let's begin our connection with LoginComponent.
+ To access our store, we have to first connect to it.<br />
+  ***example of component connection**, 
  ``` javascript
  import React from 'react';
  import {connect} from 'react-redux';
- import PropTypes from 'prop-types';
  
-const Login = ({login}) => {
+const ComponentA = (props) => {
 }
-
-Login.proptypes = {
-login:PropTypes.func.isRequired
-}
-
-export default connect(null, {login})(Login)
- 
+export default connect(null, {})(ComponentA)
  ```
+ ***here, ComponentA can access our store.***
  
  
 
