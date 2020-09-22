@@ -18,7 +18,8 @@ const {firstName, lastName} = data
 setData({...data, firstName:'bhupen',lastName:'thapa'})
 }
 ```
-In above, we simply using a useState hooks to initialize data and set value to it.</br>
+In above, I am simply using a useState hooks. If you are not familar with hooks click the link below and have a look at it.</br>
+[https://reactjs.org/docs/hooks-intro.html]</br>
 **_What is redux?_**<br>
 *Redux is a predictable state container for JavaScript apps.*<br>
 **_Merits_**<br>
