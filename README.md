@@ -14,10 +14,11 @@ const [data, setData] = useState =({
       firstName:'',
       lastName:''
 })
-const {firstName, lastName} = datacf
+const {firstName, lastName} = data
 setData({...data, firstName:'bhupen',lastName:'thapa'})
 }
 ```
+In above, we simply using a useState hooks to initialize data and set value to it.</br>
 **_What is redux?_**<br>
 *Redux is a predictable state container for JavaScript apps.*<br>
 **_Merits_**<br>
